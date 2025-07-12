@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S-mart Seller</title> <!-- Updated title -->
+    <!-- Favicon -->
+    <link rel="icon" href="pic.jpg" type="image/jpeg" onerror="this.onerror=null;this.href='https://placehold.co/32x32/aabbcc/ffffff?text=S';">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a clean look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Hide scrollbar for a cleaner look, but allow scrolling */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-lg transform transition-all duration-300 hover:scale-[1.01] border border-gray-200">
+        <!-- Separated Header Section -->
+        <div class="mb-8 pb-6 border-b border-gray-200">
+            <div class="flex items-center justify-between mb-2"> <!-- Ensures logo, title, and button are on one line -->
+                <div class="flex items-center flex-grow"> <!-- Added flex-grow to push content to edges -->
+                    <!-- S-mart Logo -->
+                    <img src="pic.jpg" alt="S-mart Logo" class="h-12 w-12 rounded-full mr-3 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/48x48/aabbcc/ffffff?text=Logo';">
+                    <h1 class="text-4xl font-extrabold text-gray-800">S-mart</h1>
+                </div>
+                <button id="contactUsBtn"
+                        class="text-xs px-3 py-1.5 bg-gray-200 text-gray-800 font-semibold rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300 ease-in-out flex-shrink-0">
+                    Contact Us
+                </button>
+            </div>
+            <p class="text-center text-gray-700 font-bold text-lg mb-2"> <!-- Added "S-mart Sellers" in bold -->
+                S-mart Sellers
+            </p>
+            <p class="text-center text-gray-600 mb-6">
+                Sell with Us
+            </p>
+        </div>
+
+        <form id="productForm" class="space-y-6">
+            <!-- Product Details Section -->
+            <div class="border-b border-gray-200 pb-6">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Product Details</h2>
+
+                <div>
+                    <label for="productName" class="block text-sm font-medium text-gray-700 mb-1">Product Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="productName" name="productName" required
+                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
+                </div>
+
+                <div>
+                    <label for="productDescription" class="block text-sm font-medium text-gray-700 mb-1">Product Description <span class="text-red-500">*</span></label>
+                    <textarea id="productDescription" name="productDescription" rows="4" required
+                              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out resize-y"></textarea>
+                </div>
+
+                <div>
+                    <label for="productPrice" class="block text-sm font-medium text-gray-700 mb-1">Product Price (e.g., 19.99) <span class="text-red-500">*</span></label>
+                    <input type="number" id="productPrice" name="productPrice" step="0.01" min="0" required
+                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
+                </div>
+
+                <div>
+                    <label for="productCategory" class="block text-sm font-medium text-gray-700 mb-1">Product Category <span class="text-red-500">*</span></label>
+                    <select id="productCategory" name="productCategory" required
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
+                        <option value="">Select a category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Fashion">Fashion</option>
+                        <option value="Home & Garden">Home & Garden</option>
+                        <option value="Books">Books</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Stationery">Stationery</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Your Details Section -->
+            <div class="pt-6">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Your Details</h2>
+
+                <div>
+                    <label for="yourName" class="block text-sm font-medium text-gray-700 mb-1">Your Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="yourName" name="yourName" required
+                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
+                </div>
+
+                <div>
+                    <label for="yourEmail" class="block text-sm font-medium text-gray-700 mb-1">Your Email <span class="text-red-500">*</span></label>
+                    <input type="email" id="yourEmail" name="yourEmail" required
+                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
+                </div>
+
+                <div>
+                    <label for="yourPhone" class="block text-sm font-medium text-gray-700 mb-1">Your Phone Number (e.g., +1234567890) <span class="text-red-500">*</span></label>
+                    <input type="tel" id="yourPhone" name="yourPhone" required
+                           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-150 ease-in-out">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center pt-6">
+                <button type="submit"
+                        class="w-full md:w-auto px-8 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                    Submit Product Details
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Custom Message Modal -->
+    <div id="messageModal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-sm w-full text-center">
+            <h3 id="modalTitle" class="text-2xl font-bold mb-4 text-gray-800"></h3>
+            <p id="modalMessage" class="text-gray-700 mb-6"></p>
+            <button id="closeModal" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                Got It!
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productForm = document.getElementById('productForm');
+            const messageModal = document.getElementById('messageModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+            const closeModalBtn = document.getElementById('closeModal');
+            const contactUsBtn = document.getElementById('contactUsBtn');
+
+            // Function to display the custom modal
+            function showMessage(title, message) {
+                modalTitle.textContent = title;
+                modalMessage.textContent = message;
+                messageModal.classList.remove('hidden');
+            }
+
+            // Function to close the custom modal
+            closeModalBtn.addEventListener('click', () => {
+                messageModal.classList.add('hidden');
+            });
+
+            // --- Contact Us Button Functionality ---
+            // Replace 'YOUR_EMAIL_ADDRESS' with your actual email address
+            const yourEmailAddress = 'YOUR_EMAIL_ADDRESS'; // IMPORTANT: Replace this!
+            // Replace 'YOUR_WHATSAPP_NUMBER_FOR_CONTACT' with your actual WhatsApp number for general contact
+            const contactWhatsappNumber = 'YOUR_WHATSAPP_NUMBER_FOR_CONTACT'; // IMPORTANT: Replace this!
+
+            contactUsBtn.addEventListener('click', () => {
+                const emailSubject = encodeURIComponent('General Inquiry from S-mart Website');
+                const mailtoUrl = `mailto:${yourEmailAddress}?subject=${emailSubject}`;
+                window.open(mailtoUrl, '_blank');
+
+                const whatsappMessage = encodeURIComponent('Hello S-mart, I have a general inquiry from your website.');
+                const whatsappUrl = `https://wa.me/${contactWhatsappNumber}?text=${whatsappMessage}`;
+                window.open(whatsappUrl, '_blank');
+
+                showMessage('Contact Us', 'Your email client and WhatsApp chat have been opened for you to send us a message. Please click "Send" in both.');
+            });
+
+
+            productForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Collect form data
+                const productName = document.getElementById('productName').value;
+                const productDescription = document.getElementById('productDescription').value;
+                const productPrice = document.getElementById('productPrice').value;
+                const productCategory = document.getElementById('productCategory').value;
+                const yourName = document.getElementById('yourName').value;
+                const yourEmail = document.getElementById('yourEmail').value;
+                const yourPhone = document.getElementById('yourPhone').value;
+
+                // Basic validation (though 'required' attribute handles most)
+                if (!productName || !productDescription || !productPrice || !productCategory || !yourName || !yourEmail || !yourPhone) {
+                    showMessage('Error', 'Please fill in all required fields.');
+                    return;
+                }
+
+                // Construct the message for WhatsApp and Email
+                const messageContent = `
+Product Submission Request:
+
+Product Details:
+Name: ${productName}
+Description: ${productDescription}
+Price: $${parseFloat(productPrice).toFixed(2)}
+Category: ${productCategory}
+
+Seller Details:
+Name: ${yourName}
+Email: ${yourEmail}
+Phone: ${yourPhone}
+                `.trim(); // .trim() removes leading/trailing whitespace
+
+                // --- WhatsApp Integration for Product Submission ---
+                // Replace 'YOUR_WHATSAPP_NUMBER' with your actual WhatsApp number, including country code (e.g., +919876543210)
+                const whatsappNumber = 'YOUR_WHATSAPP_NUMBER'; // IMPORTANT: Replace this!
+                const encodedWhatsappMessage = encodeURIComponent(messageContent);
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedWhatsappMessage}`;
+
+                // --- Email Integration for Product Submission ---
+                // This 'yourEmailAddress' is also used for the Contact Us button.
+                // Replace 'YOUR_EMAIL_ADDRESS' with your actual email address
+                // const yourEmailAddress = 'YOUR_EMAIL_ADDRESS'; // Already defined above
+                const emailSubject = encodeURIComponent(`Product Listing Request: ${productName}`);
+                const emailBody = encodeURIComponent(messageContent);
+                const mailtoUrl = `mailto:${yourEmailAddress}?subject=${emailSubject}&body=${emailBody}`;
+
+                // Open WhatsApp and Email clients
+                window.open(whatsappUrl, '_blank');
+                window.open(mailtoUrl, '_blank');
+
+                // Show success message
+                showMessage(
+                    'Submission Successful!',
+                    'Your details have been prepared for WhatsApp and Email. Please click "Send" in the new tabs that just opened to complete the submission.'
+                );
+
+                // Optionally clear the form after submission
+                productForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
